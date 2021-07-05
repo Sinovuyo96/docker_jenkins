@@ -1,22 +1,25 @@
-pipeline{
-    agent{
-        label {label "linux"}
-    }
-    stages{
-        stage("build"){
-            steps{
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
                 sh """
                 docker build -t hello there .
                 """
             }
-          stage ("run"){
-              steps{
-                  sh """
+        }
+        stage('Run') {
+            steps {
+                sh """
                   docker run -rm hello_there
                   """
-              }
-          }
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
         }
     }
-   
 }
