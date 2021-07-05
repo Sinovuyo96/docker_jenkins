@@ -19,7 +19,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh """
-                  docker push "sinovuyo/pyapp:python"
+                  docker push sinovuyo/pyapp:python
                   """
             }
         }
