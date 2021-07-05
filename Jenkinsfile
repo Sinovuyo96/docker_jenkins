@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh """
-                docker build -t hello there .
+                docker build . -t sinovuyo/pyapp
                 """
             }
         }
