@@ -34,5 +34,5 @@ jobs:
         run: |
           ls -l
           docker build . -t sno-python-img
-          docker image ps
-          docker images
+          docker ps
+          docker image ls
